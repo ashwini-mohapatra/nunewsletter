@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "465174489970",
+    "firebase_url": "https://nunewsletter-android.firebaseio.com",
+    "project_id": "nunewsletter-android",
+    "storage_bucket": "nunewsletter-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465174489970:android:0592ec1f387c1be0530beb",
+        "android_client_info": {
+          "package_name": "com.riseofash.nunewsletter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465174489970-rd906k0pkcrbu70o3g93qjogi71meogf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.osproject.nunewsletter",
+            "certificate_hash": "161eaa1eaa5db3f61fd7b06a8ba947319a67492d"
+          }
+        },
+        {
+          "client_id": "465174489970-0pclvv8n23752q168ak93uvo027n4jq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgk4YaQRgRWOXdPRjCGWheU7Otyd6si8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465174489970-0pclvv8n23752q168ak93uvo027n4jq3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
