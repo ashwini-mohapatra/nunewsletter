@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:nunewsletter/CreatePost.dart';
+import 'package:nunewsletter/EditorHome.dart';
 
 class AlertDialogBox{
 Information(BuildContext context,String title, String description){
@@ -24,7 +25,7 @@ Information(BuildContext context,String title, String description){
               onPressed: (){
         Navigator.pop(context);
         Navigator.push(context,MaterialPageRoute(builder: (context){
-        return UploadData();
+        return EditorHome();
         }));
         }
             ),
