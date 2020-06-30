@@ -32,6 +32,7 @@ class _SignInSignUpState extends State<SignInSignUp> {
     final authResult=await _firebaseauth.signInWithEmailAndPassword(email: _emailcontroller.text, password: _passwordcontroller.text);
     FirebaseUser mUser=authResult.user;
     if(mUser.uid!=null){
+      Navigator.pop(context);
         abc.Information(context," Login Successful","Successfully Logged in to Account");
         _firebaseauth.signOut();
       }

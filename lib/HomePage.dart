@@ -1,10 +1,12 @@
 
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:nunewsletter/Constants.dart';
 import 'package:nunewsletter/CreatePost.dart';
 import 'package:nunewsletter/EditorLogin.dart';
 import 'package:nunewsletter/Navigationbloc.dart';
 import 'package:nunewsletter/Posts.dart';
+import 'package:nunewsletter/UserUpload.dart';
 import 'package:nunewsletter/ViewPost.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,6 +38,7 @@ class _HomePageState extends State<HomePage> {
   var data1;
   List<Posts> postlist=[];
 
+  TabController controller1;
   _HomePageState(List<Posts> postlist1){
     postlist=postlist1;
   }
@@ -77,7 +80,27 @@ class _HomePageState extends State<HomePage> {
     }));
 
   }
+  void searchpls(){
 
+  }
+
+  void addpost(){
+
+  }
+  void morepls(){
+    ;
+  }
+  void choiceAction(String choices){
+    if(choices==Constants.a){
+      Navigator.push(context, MaterialPageRoute(builder: (context){
+        return SignInSignUp();
+      }));
+    }else if(choices==Constants.b){
+      Navigator.push(context, MaterialPageRoute(builder: (context){
+        return UserUpload();
+      }));
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,13 +108,20 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("Anukriti Home"),
         actions: <Widget>[
-          FlatButton(
-            child: Text('Editor Login',style: TextStyle(
-              fontSize: 15.0,
-              color: Colors.white,
-            ),
-            ),
-            onPressed: signin,
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: searchpls,
+          ),
+          PopupMenuButton<String>(
+            onSelected: choiceAction,
+            itemBuilder: (BuildContext context){
+              return Constants.choices.map((String choice){
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice),
+                  );
+              }).toList();
+            },
           ),
         ],
       ),
@@ -104,7 +134,8 @@ class _HomePageState extends State<HomePage> {
                 return PostUI(postlist[index].img,postlist[index].head,postlist[index].content,postlist[index].date,
                     postlist[index].time);
               }
-          )
+          ),
+
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.red,
