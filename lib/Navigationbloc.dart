@@ -5,6 +5,7 @@ import 'package:nunewsletter/HomePage.dart';
 import 'package:nunewsletter/OneMonthBack.dart';
 import 'package:nunewsletter/ThreeMonthBack.dart';
 import 'package:nunewsletter/TwoMonthBack.dart';
+import 'package:nunewsletter/helpPage.dart';
 
 class NavBloc extends StatefulWidget {
 
@@ -201,6 +202,19 @@ class _NavBlocState extends State<NavBloc> {
                 return ThreeMonthBack();
               })),},
           ),
+
+
+           ListTile(
+            leading: Icon(Icons.arrow_back),
+            title: Text('Contact for help'),
+            onTap: () => {
+              Navigator.pop(context),
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return HelpPage(); 
+              })),
+            },
+          ),
+
           SizedBox(height: 290.0,),
           Text('Developed By:',textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,),textDirection: TextDirection.ltr,),
           SizedBox(height: 10.0,),
